@@ -57,7 +57,7 @@ export default function Navbar() {
                 </Link>
             </div>
 
-            <button className="nav-btn" href="#demo">
+            <button className="nav-btn">
                 <Link href="/#demo" className="demo__item">
                     Получить демо
                 </Link>
