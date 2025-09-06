@@ -21,7 +21,7 @@ export default function Help() {
                     <img
                         src="assets/toggle-dynamic-clay.svg"
                         alt=""
-                        class="help_icon"
+                        className="help_icon"
                     />
                     <p className="help_desc">
                         Программа лояльности без сложных систем
