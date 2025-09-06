@@ -1,0 +1,150 @@
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes iconLeftUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero__star-icon,
+.hero__gift-icon,
+.hero__money-icon {
+    animation: iconLeftUp 2s ease forwards;
+}
+
+@keyframes iconRightUp {
+    0% {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero__dollar-icon,
+.hero__thumb-icon,
+.hero__mobile-icon {
+    animation: iconRightUp 2s ease forwards;
+}
+
+@media (max-width: 412px) {
+    @keyframes iconLeftUpMobile {
+        0% {
+            opacity: 0;
+            transform: translateY(-200px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero__star-icon,
+    .hero__gift-icon,
+    .hero__money-icon {
+        animation: iconLeftUpMobile 2s ease forwards;
+    }
+
+    @keyframes iconRightUpMobile {
+        0% {
+            opacity: 0;
+            transform: translateY(200px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero__dollar-icon,
+    .hero__thumb-icon,
+    .hero__mobile-icon {
+        animation: iconRightUpMobile 2s ease forwards;
+    }
+}
+
+@keyframes aboutTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    1000% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.about-title {
+    animation: aboutTitle 2s ease forwards;
+}
+
+@keyframes aboutCard {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-card,
+.about-answer {
+    animation: aboutCard 3s ease forwards;
+}
+
+@keyframes assignmentAccordion {
+    0% {
+        opacity: 1;
+        transform: translateY(90px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.assignment-title,
+.assignment-accordion {
+    animation: assignmentAccordion 2s ease forwards;
+}
+
+@keyframes registerUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.register_title,
+.register_about_title,
+.register_about_list,
+.register_form {
+    animation: registerUp 3s ease forward;
+}
