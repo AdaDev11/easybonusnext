@@ -1,6 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -14,6 +18,18 @@ export default function Navbar() {
     }, [open]);
 
     const closeMenu = () => setOpen(false);
+
+    const handleScroll = (e, id) => {
+        e.preventDefault();
+
+        gsap.to(window, {
+            duration: 1.9,
+            scrollTo: {
+                y: id,
+                offsetY: 90,
+            },
+        });
+    };
 
     return (
         <div className="nav">
@@ -37,28 +53,43 @@ export default function Navbar() {
                 <Link
                     href="/#about"
                     className="nav-menu__item"
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                        closeMenu();
+                        handleScroll(e, "#about");
+                    }}
                 >
                     О Нас
                 </Link>
                 <Link
                     href="/#demo"
                     className="nav-menu__item"
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                        closeMenu();
+                        handleScroll(e, "#demo");
+                    }}
                 >
                     Демо
                 </Link>
                 <Link
                     href="/#contact"
                     className="nav-menu__item"
-                    onClick={closeMenu}
+                    onClick={(e) => {
+                        closeMenu();
+                        handleScroll(e, "#contact");
+                    }}
                 >
                     Контакты
                 </Link>
             </div>
 
             <button className="nav-btn">
-                <Link href="/#demo" className="demo__item">
+                <Link
+                    href="/#demo"
+                    className="demo__item"
+                    onClick={(e) => {
+                        handleScroll(e, "#demo");
+                    }}
+                >
                     Получить демо
                 </Link>
             </button>
