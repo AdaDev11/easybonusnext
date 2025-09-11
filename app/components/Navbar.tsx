@@ -11,16 +11,19 @@ export default function Navbar() {
 
     useEffect(() => {
         if (open) {
-            document.body.classList.add("menu-open");
+            document.body.style.overflow = "hidden";
         } else {
-            document.body.classList.remove("menu-open");
+            document.body.style.overflow = "auto";
         }
     }, [open]);
 
-    const closeMenu = () => setOpen(false);
+    const closeMenu = () => {
+        setOpen(false);
+    };
 
     const handleScroll = (e, id) => {
         e.preventDefault();
+        closeMenu();
 
         gsap.to(window, {
             duration: 1.9,
@@ -53,48 +56,46 @@ export default function Navbar() {
                 <Link
                     href="/#about"
                     className="nav-menu__item"
-                    onClick={(e) => {
-                        closeMenu();
-                        handleScroll(e, "#about");
-                    }}
+                    onClick={(e) => handleScroll(e, "#about")}
                 >
                     О Нас
                 </Link>
                 <Link
                     href="/#demo"
                     className="nav-menu__item"
-                    onClick={(e) => {
-                        closeMenu();
-                        handleScroll(e, "#demo");
-                    }}
+                    onClick={(e) => handleScroll(e, "#demo")}
                 >
                     Демо
                 </Link>
                 <Link
                     href="/#contact"
                     className="nav-menu__item"
-                    onClick={(e) => {
-                        closeMenu();
-                        handleScroll(e, "#contact");
-                    }}
+                    onClick={(e) => handleScroll(e, "#contact")}
                 >
                     Контакты
                 </Link>
+                <Link
+                    href="/#demo"
+                    className="nav-menu__item"
+                    onClick={(e) => handleScroll(e, "#demo")}
+                >
+                    Получить демо
+                </Link>
             </div>
-
             <button className="nav-btn">
                 <Link
                     href="/#demo"
                     className="demo__item"
-                    onClick={(e) => {
-                        handleScroll(e, "#demo");
-                    }}
+                    onClick={(e) => handleScroll(e, "#demo")}
                 >
                     Получить демо
                 </Link>
             </button>
 
-            <div className="burger" onClick={() => setOpen(!open)}>
+            <div
+                className={`burger ${open ? "active" : ""}`}
+                onClick={() => setOpen(!open)}
+            >
                 <span></span>
                 <span></span>
                 <span></span>
